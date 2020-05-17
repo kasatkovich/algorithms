@@ -14,6 +14,8 @@ https://leetcode.com/problems/merge-intervals/
 ## insert interval
 
 https://leetcode.com/problems/insert-intervals/
+    
+    
     def insert(self, intervals, newInterval):
         result = []
         inserted = False
