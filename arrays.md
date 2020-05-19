@@ -6,6 +6,14 @@
 ## Two Sum
 https://leetcode.com/problems/two-sum/submissions/
 
+def twoSum(self, nums: List[int], target: int) -> List[int]:
+        hashtable = {};
+        for i in range(len(nums)):
+            if nums[i] not in hashtable:
+                hashtable[target-(nums[i])] = i;
+            else:
+                return [hashtable[nums[i]], i];
+
 ## 3Sum
 https://leetcode.com/problems/3sum/
 
