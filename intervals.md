@@ -17,15 +17,15 @@ https://leetcode.com/problems/merge-intervals/
             return intervals
         
         intervals.sort(key = lambda x: x[0])
-        stack = []
+        korzina = []
         
         for interval in intervals:
-            if stack and stack[-1][1] >= interval[0]:
-                stack[-1][1] = max(stack[-1][1],interval[1])
+            if korzina and korzina[-1][1] >= interval[0]:
+                korzina[-1][1] = max(korzina[-1][1],interval[1])
             else:
-                stack.append(interval)
+                korzina.append(interval)
                 
-        return stack
+        return korzina
 
 ## insert interval
 
