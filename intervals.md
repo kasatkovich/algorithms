@@ -9,7 +9,7 @@ https://leetcode.com/problems/non-overlapping-intervals/submissions/
 
 ## merge intervals
 
-https://leetcode.com/problems/merge-intervals/submissions/
+https://leetcode.com/problems/merge-intervals/
 
 
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
