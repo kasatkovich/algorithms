@@ -5,7 +5,7 @@
 
 ## non-overlapping intervals
 
-https://leetcode.com/problems/non-overlapping-intervals/submissions/
+https://leetcode.com/problems/non-overlapping-intervals/
 
 def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         if not intervals:
