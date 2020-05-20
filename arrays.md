@@ -4,7 +4,7 @@
 +[Subarray Sum Equals K](#subarray-sum-equals-k)
 
 ## Two Sum
-https://leetcode.com/problems/two-sum/submissions/
+https://leetcode.com/problems/two-sum/
 
 def twoSum(self, nums: List[int], target: int) -> List[int]:
         hashtable = {};
