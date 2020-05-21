@@ -15,7 +15,7 @@ https://leetcode.com/problems/merge-intervals/
 
 https://leetcode.com/problems/insert-interval/submissions/
     
-    
+'''python   
     def insert(self, intervals, newInterval):
         result = []
         inserted = False
@@ -34,6 +34,8 @@ https://leetcode.com/problems/insert-interval/submissions/
         if(not inserted):
             result.append(newInterval)
         return result
+        
+'''
         
 
 
