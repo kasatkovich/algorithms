@@ -6,6 +6,7 @@
 ## Two Sum
 https://leetcode.com/problems/two-sum/
 
+'''python
 def twoSum(self, nums: List[int], target: int) -> List[int]:
         hashtable = {};
         for i in range(len(nums)):
@@ -13,6 +14,7 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
                 hashtable[target-(nums[i])] = i;
             else:
                 return [hashtable[nums[i]], i];
+'''                
 
 ## 3Sum
 https://leetcode.com/problems/3sum/
