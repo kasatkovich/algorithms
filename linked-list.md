@@ -17,6 +17,7 @@ https://leetcode.com/problems/palindrome-linked-list/
 ## Merge Two Sorted Lists
 https://leetcode.com/problems/merge-two-sorted-lists/
 
+'''python
 def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
         merged_list = ListNode()
         current_merged = merged_list
@@ -34,6 +35,7 @@ def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
             current_merged.next = l2
         return merged_list.next
 
+'''
 
 
 
