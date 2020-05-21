@@ -7,6 +7,7 @@
 
 https://leetcode.com/problems/non-overlapping-intervals/
 
+'''python
 def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
         if not intervals:
             return 0
@@ -18,6 +19,8 @@ def eraseOverlapIntervals(self, intervals: List[List[int]]) -> int:
                 numNonOverlapping += 1
                 endHolder = interval[1]
         return len(intervals) - numNonOverlapping
+
+'''
 
 ## merge intervals
 
