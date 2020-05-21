@@ -11,7 +11,7 @@ https://leetcode.com/problems/non-overlapping-intervals/submissions/
 
 https://leetcode.com/problems/merge-intervals/
 
-
+'''python
     def merge(self, intervals: List[List[int]]) -> List[List[int]]:
         if not intervals:
             return intervals
@@ -23,6 +23,7 @@ https://leetcode.com/problems/merge-intervals/
             else:
                 korzina.append(interval)
         return korzina
+'''
 
 ## insert interval
 
