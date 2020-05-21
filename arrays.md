@@ -11,6 +11,8 @@ https://leetcode.com/problems/3sum/
 
 ## Subarray Sum Equals K
 https://leetcode.com/problems/subarray-sum-equals-k/v
+
+'''python
 def subarraySum(self, nums: List[int], k: int) -> int:
         sumMap = {0: 1}
         sumNums = 0
@@ -24,6 +26,7 @@ def subarraySum(self, nums: List[int], k: int) -> int:
             else:
                 sumMap[sumNums] += 1
         return kSubarrays
+'''
 
 
 
