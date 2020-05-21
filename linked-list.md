@@ -13,6 +13,7 @@ https://leetcode.com/problems/middle-of-the-linked-list/
 ## Palindrome Linked List
 https://leetcode.com/problems/palindrome-linked-list/
 
+'''python
 def isPalindrome(self, head):
         slow = head
         fast = head
@@ -28,6 +29,8 @@ def isPalindrome(self, head):
                 return False
             slow = slow.next
         return True
+ 
+ '''
 
 
 
