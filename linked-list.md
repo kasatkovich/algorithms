@@ -24,6 +24,25 @@ https://leetcode.com/problems/merge-two-sorted-lists/
 ## Remove Nth Node From End of List
 https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
+```python
+def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+    if not head or not head.next:
+        return None
+    current, follower, length, diff_count = head, head, 0, 0
+    while current:
+        current = current.next
+        length += 1
+        if diff_count == n + 1:
+            follower = follower.next
+        else:
+            diff_count += 1
+    if length == n:
+        return head.next
+    follower.next = follower.next.next
+    return head
+
+```
+
 ## Linked List Cycle II
 https://leetcode.com/problems/linked-list-cycle-ii/
 
