@@ -30,6 +30,24 @@ https://leetcode.com/problems/linked-list-cycle-ii/
 ## Linked List Cycle
 https://leetcode.com/problems/linked-list-cycle/
 
+```python
+def hasCycle(self, head: ListNode) -> bool:
+    if not head or not head.next:
+        return False
+    fast = head.next.next
+    low = head.next
+    while fast:
+        if low == fast:
+            return True
+        low = low.next
+        if fast.next:
+            fast = fast.next.next
+        else:
+            break
+    return False
+
+```
+
 ## Reorder List
 https://leetcode.com/problems/reorder-list/
 
