@@ -37,6 +37,20 @@ https://leetcode.com/problems/reorder-list/
 https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 ```python
+def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+        A_nodes, B_nodes = [], set()
+        while headA:
+            A_nodes.append(headA)
+            headA = headA.next
+        while headB:
+            B_nodes.add(headB)
+            headB = headB.next
+        for node in A_nodes:
+            if node in B_nodes:
+                return node
+        return None
+
+
 def getIntersectionNode(self, headA, headB):
     if not headA or not headB: return None
     lenA, lenB = 0, 0 
