@@ -13,16 +13,12 @@ https://leetcode.com/problems/middle-of-the-linked-list/
 
 ```python
 def middleNode(self, head: ListNode) -> ListNode:
-    slow = head
-    fast = head
-    try:
-        while fast.next.next:
+        slow = head
+        fast = head
+        while fast and fast.next:
             fast = fast.next.next
             slow = slow.next
-        slow = slow.next
-    except:
-        pass
-    return slow
+        return slow
 
 ```
 ## Palindrome Linked List
