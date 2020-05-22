@@ -9,7 +9,7 @@ https://leetcode.com/problems/reverse-linked-list/
 ## Middle of the Linked List
 https://leetcode.com/problems/middle-of-the-linked-list/
 
-'''python
+```python
 def middleNode(self, head: ListNode) -> ListNode:
         slow = head
         fast = head
@@ -22,4 +22,4 @@ def middleNode(self, head: ListNode) -> ListNode:
             pass
         return slow
 
-'''
+```
