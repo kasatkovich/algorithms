@@ -27,6 +27,19 @@ https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 ## Linked List Cycle II
 https://leetcode.com/problems/linked-list-cycle-ii/
 
+```python
+def detectCycle(self, head: ListNode) -> ListNode:
+    nodes = set()
+    while head:
+        if head not in nodes:
+            nodes.add(head)
+        else:
+            return head
+        head = head.next
+    return None
+
+```
+
 ## Linked List Cycle
 https://leetcode.com/problems/linked-list-cycle/
 
