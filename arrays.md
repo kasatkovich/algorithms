@@ -9,7 +9,7 @@ https://leetcode.com/problems/two-sum/submissions/
 ## 3Sum
 https://leetcode.com/problems/3sum/
 
-'''python
+```python
 def threeSum(self, nums):
         result = []
         if len(nums) < 3:
@@ -35,7 +35,7 @@ def threeSum(self, nums):
                         end -= 1
         return result
 
-'''
+```
 ## Subarray Sum Equals K
 https://leetcode.com/problems/subarray-sum-equals-k/v
 
