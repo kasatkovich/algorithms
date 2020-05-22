@@ -11,19 +11,19 @@ https://leetcode.com/problems/non-overlapping-intervals/submissions/
 
 https://leetcode.com/problems/merge-intervals/
 
-'''python
-    def merge(self, intervals: List[List[int]]) -> List[List[int]]:
-        if not intervals:
-            return intervals
-        intervals.sort(key=lambda x: x[0])
-        korzina = []
-        for interval in intervals:
-            if korzina and korzina[-1][1] >= interval[0]:
-                korzina[-1][1] = max(korzina[-1][1], interval[1])
-            else:
-                korzina.append(interval)
-        return korzina
-'''
+```python
+def merge(self, intervals: List[List[int]]) -> List[List[int]]:
+    if not intervals:
+        return intervals
+    intervals.sort(key=lambda x: x[0])
+    korzina = []
+    for interval in intervals:
+        if korzina and korzina[-1][1] >= interval[0]:
+            korzina[-1][1] = max(korzina[-1][1], interval[1])
+        else:
+            korzina.append(interval)
+    return korzina    
+```
 
 ## insert interval
 
