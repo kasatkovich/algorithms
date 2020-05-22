@@ -32,19 +32,11 @@ https://leetcode.com/problems/linked-list-cycle/
 
 ```python
 def hasCycle(self, head: ListNode) -> bool:
-    if not head or not head.next:
-        return False
-    fast = head.next.next
-    low = head.next
-    while fast:
-        if low == fast:
-            return True
-        low = low.next
-        if fast.next:
-            fast = fast.next.next
-        else:
-            break
-    return False
+    seen = set()
+    while head and id(head) not in seen:
+        seen.add(id(head))
+        head = head.next
+    return head and id(head) in seen
 
 ```
 
