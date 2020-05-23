@@ -52,26 +52,3 @@ https://leetcode.com/problems/intersection-of-two-linked-lists/
 https://leetcode.com/problems/sort-list/
 
 
-
-
-
-
-
-
-
-
-
-
-```python
-def reverseList(self, head: ListNode) -> ListNode:
-    prev = None
-    curr = head
-    while curr:
-        next = curr.next
-        curr.next = prev
-        prev = curr
-        curr = next
-    return prev
-
-```
-
