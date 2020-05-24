@@ -27,6 +27,16 @@ def reverseList(self, head: ListNode) -> ListNode:
 ## Middle of the Linked List
 https://leetcode.com/problems/middle-of-the-linked-list/
 
+```python
+def middleNode(self, head: ListNode) -> ListNode:
+    slow = head
+    fast = head
+    while fast and fast.next:
+        fast = fast.next.next
+        slow = slow.next
+    return slow
+```
+
 ## Palindrome Linked List
 https://leetcode.com/problems/palindrome-linked-list/
 
