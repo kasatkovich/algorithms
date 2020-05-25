@@ -16,24 +16,16 @@ https://leetcode.com/problems/merge-intervals/
 https://leetcode.com/problems/insert-interval/submissions/
     
 ```python   
-def insert(self, intervals, newInterval):
-    result = []
-    inserted = False
+def insert(self, intervals: List[List[int]], newInterval: List[int]) -> List[List[int]]:
+    intervals.append(newInterval)
+    intervals.sort()
+    merged = []
     for interval in intervals:
-        if(inserted):
-            result.append(interval)
-        elif(interval[1] < newInterval[0]):
-            result.append(interval)
-        elif(newInterval[1] < interval[0]):
-            result.append(newInterval)
-            result.append(interval)
-            inserted = True
+        if not merged or merged[-1][1] < interval[0]:
+            merged.append(interval)
         else:
-            newInterval[0] = min(newInterval[0], interval[0])
-            newInterval[1] = max(newInterval[1], interval[1])
-    if(not inserted):
-        result.append(newInterval)
-    return result    
+            merged[-1][1] = max(merged[-1][1], interval[1])
+    return merged    
         
 ```
         
