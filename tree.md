@@ -23,6 +23,7 @@ https://leetcode.com/problems/binary-tree-inorder-traversal/
 https://leetcode.com/problems/symmetric-tree/
  
  ```python
+ №1
  def isSymmetric(self, root: TreeNode) -> bool:
     if not root:
         return True
@@ -45,6 +46,23 @@ https://leetcode.com/problems/symmetric-tree/
             return False
         level = nextlevel
     return True
+
+№2
+def isSymmetric(self, root: TreeNode) -> bool:
+    if not root:
+        return True
+
+    def isIdentical(left, right):
+        if not left and not right:
+            return True
+        if not left or not right:
+            return False
+        if left.val! = right.val:
+            return False
+        else:
+            return isIdentical(left.left, right.right) and isIdentical(left.right, right.left)
+    return isIdentical(root.left, root.right)
+
 
 ```
 
