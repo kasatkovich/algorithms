@@ -38,7 +38,6 @@ def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
         slow.next = slow.next.next
         return head
 
-
 ```
 
 ## Linked List Cycle II
