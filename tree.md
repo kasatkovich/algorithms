@@ -79,7 +79,6 @@ def levelOrder(self, root):
             queue.append((node.right, level+1))
     return ans
 
-
 ```
 
 
