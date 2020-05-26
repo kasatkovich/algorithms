@@ -26,20 +26,17 @@ https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
 ```python
 def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
-    if not head or not head.next:
-        return None
-    current, follower, length, diff_count = head, head, 0, 0
-    while current:
-        current = current.next
-        length += 1
-        if diff_count == n + 1:
-            follower = follower.next
-        else:
-            diff_count += 1
-    if length == n:
+    fast, slow = head, head
+    for i in range(n):
+        fast = fast.next
+    if not fast:
         return head.next
-    follower.next = follower.next.next
-    return head
+    else:
+        while fast.next:
+            fast = fast.next
+            slow = slow.next
+        slow.next = slow.next.next
+        return head
 
 ```
 
