@@ -33,7 +33,7 @@ https://leetcode.com/problems/maximum-depth-of-binary-tree/
 https://leetcode.com/problems/same-tree/
 ```python
 def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
-    if p is None or q is None:
+    if not p or not q :
         return p == q
     if p.val != q.val:
         return False
