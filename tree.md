@@ -17,7 +17,7 @@
 https://leetcode.com/problems/binary-tree-inorder-traversal/
 
 ```python
-№1
+first solution
 def inorderTraversal(self, root: TreeNode) -> List[int]:
     res = []
     stack = deque([])
@@ -30,15 +30,15 @@ def inorderTraversal(self, root: TreeNode) -> List[int]:
         root = top.right
     return res
     
-№2
+second solution
 def inorderTraversal(self, root):
     def helper(nodeIn, res):
-        if(nodeIn):
+        if nodeIn:
             helper(nodeIn.left, res)
             res.append(nodeIn.val)
             helper(nodeIn.right, res)
     res = []
-    if(not root):
+    if not root:
         return res
     helper(root, res)
     return res
