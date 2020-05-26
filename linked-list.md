@@ -31,12 +31,30 @@ https://leetcode.com/problems/linked-list-cycle-ii/
 https://leetcode.com/problems/linked-list-cycle/
 
 ```python
+#first solution
 def hasCycle(self, head: ListNode) -> bool:
     seen = set()
     while head and id(head) not in seen:
         seen.add(id(head))
         head = head.next
     return head and id(head) in seen
+#second solution
+def hasCycle(self, head):
+    if not head:
+        return False
+    pointer1 = pointer2 = head
+    while True:
+        if pointer1.next:
+            pointer1 = pointer1.next
+        else:
+            break
+        if pointer2.next and pointer2.next.next:
+            pointer2 = pointer2.next.next
+        else:
+            break
+        if pointer1 == pointer2:
+            return True
+    return False
 
 ```
 
