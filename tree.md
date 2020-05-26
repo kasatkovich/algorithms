@@ -39,7 +39,6 @@ def isSameTree(self, p: TreeNode, q: TreeNode) -> bool:
         return False
     return self.isSameTree(p.left, q.left) and self.isSameTree(p.right, q.right)
 
-
 ```
 
 
