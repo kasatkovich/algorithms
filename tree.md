@@ -23,7 +23,7 @@ https://leetcode.com/problems/binary-tree-inorder-traversal/
 https://leetcode.com/problems/symmetric-tree/
  
  ```python
- №1
+ #first solution
  def isSymmetric(self, root: TreeNode) -> bool:
     if not root:
         return True
@@ -47,7 +47,7 @@ https://leetcode.com/problems/symmetric-tree/
         level = nextlevel
     return True
 
-№2
+#second solution
 def isSymmetric(self, root: TreeNode) -> bool:
     if not root:
         return True
