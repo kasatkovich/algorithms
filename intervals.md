@@ -16,13 +16,13 @@ def merge(self, intervals: List[List[int]]) -> List[List[int]]:
     if not intervals:
         return intervals
     intervals.sort(key=lambda x: x[0])
-    korzina = []
+    heap = []
     for interval in intervals:
-        if korzina and korzina[-1][1] >= interval[0]:
-            korzina[-1][1] = max(korzina[-1][1], interval[1])
+        if heap and heap[-1][1] >= interval[0]:
+            heap[-1][1] = max(heap[-1][1], interval[1])
         else:
-            korzina.append(interval)
-    return korzina    
+            heap.append(interval)
+    return heap   
 ```
 
 ## insert interval
