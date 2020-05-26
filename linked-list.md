@@ -42,17 +42,17 @@ def hasCycle(self, head: ListNode) -> bool:
 def hasCycle(self, head):
     if not head:
         return False
-    pointer1 = pointer2 = head
+    slow = fast = head
     while True:
-        if pointer1.next:
-            pointer1 = pointer1.next
+        if slow.next:
+            slow = slow.next
         else:
             break
-        if pointer2.next and pointer2.next.next:
-            pointer2 = pointer2.next.next
-        else:
+        if fast.next and fast.next.next: 
+            fast = fast.next.next
+        else: 
             break
-        if pointer1 == pointer2:
+        if slow == fast:
             return True
     return False
 
