@@ -22,7 +22,8 @@ def merge(self, intervals: List[List[int]]) -> List[List[int]]:
             heap[-1][1] = max(heap[-1][1], interval[1])
         else:
             heap.append(interval)
-    return heap   
+    return heap
+
 ```
 
 ## insert interval
