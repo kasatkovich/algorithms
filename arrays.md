@@ -8,12 +8,21 @@ https://leetcode.com/problems/two-sum/
 
 ```python
 def twoSum(self, nums: List[int], target: int) -> List[int]:
-    hashtable = {};
-    for i in range(len(nums)):
-        if nums[i] not in hashtable:
-            hashtable[target-(nums[i])] = i;
-        else:
-            return [hashtable[nums[i]], i];
+    x = []
+    nums = enumerate(nums)
+    nums = sorted(nums, key=lambda x: x[1])
+    l = 0
+    r = len(nums)-1
+    while l < r:
+        if nums[l][1] + nums[r][1] == target:
+            x.append(nums[l][0])
+            x.append(nums[r][0])
+            return x
+        elif nums[l][1] + nums[r][1] > target:
+            r -= 1
+        elif nums[l][1] + nums[r][1] < target:
+            l += 1
+
 ```                
 
 ## 3Sum
