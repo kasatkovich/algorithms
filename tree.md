@@ -16,6 +16,34 @@
 
 https://leetcode.com/problems/binary-tree-inorder-traversal/
 
+```python
+#first solution
+def inorderTraversal(self, root: TreeNode) -> List[int]:
+    res = []
+    stack = deque([])
+    while stack or root:
+        while root:
+            stack.append(root)
+            root = root.left
+        top = stack.pop()
+        res.append(top.val)
+        root = top.right
+    return res
+    
+#second solution
+def inorderTraversal(self, root):
+    def helper(nodeIn, res):
+        if nodeIn:
+            helper(nodeIn.left, res)
+            res.append(nodeIn.val)
+            helper(nodeIn.right, res)
+    res = []
+    if not root:
+        return res
+    helper(root, res)
+    return res
+
+```
 
 
 ## Symmetric Tree
