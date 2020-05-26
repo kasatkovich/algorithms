@@ -49,6 +49,7 @@ https://leetcode.com/problems/path-sum/
 
 https://leetcode.com/problems/binary-tree-level-order-traversal/
 ```python
+#first solution
 def levelOrder(self, root: TreeNode) -> List[List[int]]:
     self._levels = []
     self.get_level(root, 0)
@@ -63,6 +64,21 @@ def get_level(self, root, depth):
     self._levels[depth].append(root.val)
     self.get_level(root.left, depth + 1)
     self.get_level(root.right, depth + 1)
+
+#second solution
+def levelOrder(self, root):
+    index = 0
+    ans, queue = [], [(root, index)]
+    while queue:
+        node, level = queue.pop(0)
+        if node:
+            if len(ans) == level:
+                ans.append([])
+            ans[level] = ans[level] + [node.val]
+            queue.append((node.left, level+1))
+            queue.append((node.right, level+1))
+    return ans
+
 
 ```
 
