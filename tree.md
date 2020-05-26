@@ -57,7 +57,7 @@ def isSymmetric(self, root: TreeNode) -> bool:
             return True
         if not left or not right:
             return False
-        if left.val! = right.val:
+        if left.val != right.val:
             return False
         else:
             return isIdentical(left.left, right.right) and isIdentical(left.right, right.left)
