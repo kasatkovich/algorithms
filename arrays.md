@@ -23,7 +23,6 @@ def twoSum(self, nums: List[int], target: int) -> List[int]:
         elif nums[l][1] + nums[r][1] < target:
             l += 1
 
-
 ```                
 
 ## 3Sum
