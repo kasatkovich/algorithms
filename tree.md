@@ -21,6 +21,50 @@ https://leetcode.com/problems/binary-tree-inorder-traversal/
 ## Symmetric Tree
 
 https://leetcode.com/problems/symmetric-tree/
+ 
+ ```python
+ #first solution
+ def isSymmetric(self, root: TreeNode) -> bool:
+    if not root:
+        return True
+    level = [root]
+    while level:
+        nextlevel = []
+        val = []
+        for node in level:
+            if node.right:
+                nextlevel.append(node.right)
+                val.append(node.right.val)
+            else:
+                val.append("Empty")
+            if node.left:
+                nextlevel.append(node.left)
+                val.append(node.left.val)
+            else:
+                val.append("Empty")
+        if val != val[::-1]:
+            return False
+        level = nextlevel
+    return True
+
+#second solution
+def isSymmetric(self, root: TreeNode) -> bool:
+    if not root:
+        return True
+
+    def isIdentical(left, right):
+        if not left and not right:
+            return True
+        if not left or not right:
+            return False
+        if left.val != right.val:
+            return False
+        else:
+            return isIdentical(left.left, right.right) and isIdentical(left.right, right.left)
+    return isIdentical(root.left, root.right)
+
+
+```
 
 ## Maximum Depth of Binary Tree
 https://leetcode.com/problems/maximum-depth-of-binary-tree/
