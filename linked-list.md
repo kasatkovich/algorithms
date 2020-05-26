@@ -56,6 +56,7 @@ def detectCycle(self, head):
         slow = slow.next
         fast = fast.next
     return slow
+
 ```
 
 ## Linked List Cycle
