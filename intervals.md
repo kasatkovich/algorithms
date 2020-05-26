@@ -24,6 +24,7 @@ def merge(self, intervals: List[List[int]]) -> List[List[int]]:
             heap.append(interval)
     return heap
 
+
 ```
 
 ## insert interval
