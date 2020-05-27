@@ -131,7 +131,27 @@ https://leetcode.com/problems/binary-tree-level-order-traversal/
 ## Subtree of Another Tree
 
 https://leetcode.com/problems/subtree-of-another-tree/
+```python
+def isSubtree(self, s: TreeNode, t: TreeNode) -> bool:
+    if not s and not t:
+        return True
+    if not s or not t:
+        return False
+    if s.val == t.val and self.isSame(s, t):
+        return True
+    else:
+        return self.isSubtree(s.left, t) or self.isSubtree(s.right, t)
+def isSame(self, t, k):
+    if not t and not k:
+        return True
+    elif not t or not k:
+        return False
+    elif t.val != k.val:
+        return False
+    else:
+        return self.isSame(t.left, k.left) and self.isSame(t.right, k.right)
 
+```
 
 
 ## Kth Smallest Element in a BST
