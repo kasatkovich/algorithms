@@ -137,8 +137,24 @@ https://leetcode.com/problems/subtree-of-another-tree/
 ## Kth Smallest Element in a BST
 
 https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+```python
+def kthSmallest(self, root: TreeNode, k: int) -> int:
+        def numNodes(ptr, k):
+            if not ptr:
+                return 0, False
+            left, found = numNodes(ptr.left, k)
+            if found:
+                return left, found
+            if left == k-1:
+                return ptr.val, True
+            right, found = numNodes(ptr.right, k-left-1)
+            if found:
+                return right, found
+            else:
+                return left + right + 1, False
+        return numNodes(root, k)[0]
 
-
+```
 
 ## Validate Binary Search Tree
 
