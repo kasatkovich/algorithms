@@ -214,8 +214,37 @@ def isSame(self, t, k):
 ## Kth Smallest Element in a BST
 
 https://leetcode.com/problems/kth-smallest-element-in-a-bst/
+```python
+#first solution
+def kthSmallest(self, root: TreeNode, k: int) -> int:
+        def numNodes(ptr, k):
+            if not ptr:
+                return 0, False
+            left, found = numNodes(ptr.left, k)
+            if found:
+                return left, found
+            if left == k-1:
+                return ptr.val, True
+            right, found = numNodes(ptr.right, k-left-1)
+            if found:
+                return right, found
+            else:
+                return left + right + 1, False
+        return numNodes(root, k)[0]
+#second solution
+def kthSmallest(self, curNode: TreeNode, k: int) -> int:
+    stack = []
+    while curNode or stack:
+        while curNode:
+            stack.append(curNode)
+            curNode = curNode.left
+        curNode = stack.pop()
+        k -= 1
+        if k == 0:
+            return curNode.val
+        curNode = curNode.right
 
-
+```
 
 ## Validate Binary Search Tree
 
