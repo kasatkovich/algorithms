@@ -38,6 +38,7 @@ def hasCycle(self, head: ListNode) -> bool:
         seen.add(id(head))
         head = head.next
     return head and id(head) in seen
+
 #second solution
 def hasCycle(self, head):
     fast = slow = head
@@ -47,7 +48,6 @@ def hasCycle(self, head):
         if slow is fast:
             return True
     return False
-
 
 ```
 
