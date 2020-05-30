@@ -89,6 +89,27 @@ https://leetcode.com/problems/linked-list-cycle-ii/
 ## Linked List Cycle
 https://leetcode.com/problems/linked-list-cycle/
 
+```python
+#first solution
+def hasCycle(self, head: ListNode) -> bool:
+    seen = set()
+    while head and id(head) not in seen:
+        seen.add(id(head))
+        head = head.next
+    return head and id(head) in seen
+
+#second solution
+def hasCycle(self, head):
+    fast = slow = head
+    while slow and fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow is fast:
+            return True
+    return False
+
+```
+
 ## Reorder List
 https://leetcode.com/problems/reorder-list/
 
