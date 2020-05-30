@@ -220,8 +220,19 @@ https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 ## Validate Binary Search Tree
 
 https://leetcode.com/problems/validate-binary-search-tree/
+```python
+def isValidBST(self, root):
+    def valid(node, lower, upper):
+        if not node:
+            return True
+        if lower and node.val <= lower:
+            return False
+        if upper and node.val >= upper:
+            return False
+        return valid(node.left, lower, node.val) and valid(node.right, node.val, upper)
+    return valid(root, None, None)
 
-
+```
 ## Binary Search Tree Iterator
 
 https://leetcode.com/problems/binary-search-tree-iterator/
