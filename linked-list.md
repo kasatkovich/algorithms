@@ -40,19 +40,11 @@ def hasCycle(self, head: ListNode) -> bool:
     return head and id(head) in seen
 #second solution
 def hasCycle(self, head):
-    if not head:
-        return False
-    slow = fast = head
-    while True:
-        if slow.next:
-            slow = slow.next
-        else:
-            break
-        if fast.next and fast.next.next: 
-            fast = fast.next.next
-        else: 
-            break
-        if slow == fast:
+    fast = slow = head
+    while slow and fast and fast.next:
+        slow = slow.next
+        fast = fast.next.next
+        if slow is fast:
             return True
     return False
 
