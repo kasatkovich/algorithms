@@ -48,6 +48,7 @@ def hasCycle(self, head):
             return True
     return False
 
+
 ```
 
 ## Reorder List
