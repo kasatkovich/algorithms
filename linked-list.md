@@ -65,6 +65,7 @@ def isPalindrome(self, head):
         p, q = p.next, q.next
     return True
 
+
  ```
 
 
