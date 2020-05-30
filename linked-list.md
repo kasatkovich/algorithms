@@ -66,6 +66,23 @@ def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
 ## Remove Nth Node From End of List
 https://leetcode.com/problems/remove-nth-node-from-end-of-list/
 
+```python
+def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
+    fast, slow = head, head
+    for i in range(n):
+        fast = fast.next
+    if not fast:
+        return head.next
+    else:
+        while fast.next:
+            fast = fast.next
+            slow = slow.next
+        slow.next = slow.next.next
+        return head
+
+
+```
+
 ## Linked List Cycle II
 https://leetcode.com/problems/linked-list-cycle-ii/
 
