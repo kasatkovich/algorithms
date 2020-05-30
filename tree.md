@@ -234,9 +234,7 @@ class BSTIterator:
 
 
     def hasNext(self):
-        if not self.q:
-            return False
-        return True
+        return self.q
 
 
     def next(self):
