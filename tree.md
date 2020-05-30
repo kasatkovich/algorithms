@@ -255,3 +255,27 @@ https://leetcode.com/problems/validate-binary-search-tree/
 
 https://leetcode.com/problems/binary-search-tree-iterator/
 
+```python
+class BSTIterator:
+    def __init__(self, root):
+        self.q = []
+        self.allLeftIntoStack(root)
+
+
+    def hasNext(self):
+        return self.q
+
+
+    def next(self):
+        cur = self.q.pop()
+        self.allLeftIntoStack(cur.right)
+        return cur.val
+
+
+    def allLeftIntoStack(self, root):
+        while root:
+            self.q.append(root)
+            root = root.left
+
+
+```
