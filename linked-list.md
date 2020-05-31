@@ -109,6 +109,26 @@ def getIntersectionNode(self, headA, headB):
             cur2 = cur2.next
         return cur1
 
+#fourth solution
+def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
+    if not headA or not headB:
+        return None
+    currA, currB = headA, headB
+    is_secondA, is_secondB = 0, 0
+    while(currA != currB):
+        if is_secondA == 0 and not currA.next:
+            is_secondA = 1
+            currA = headB
+        else:
+            currA = currA.next
+        if is_secondB == 0 and not currB.next:
+            is_secondB = 1
+            currB = headA
+        else:
+            currB = currB.next
+    return currA
+
+
 ```
 
 ## Sort List
