@@ -81,33 +81,33 @@ def getIntersectionNode(self, headA, headB):
     
 #third solution
 def getIntersectionNode(self, headA, headB):
-        if not headA or not headB:
-            return None
-        cur1 = headA
-        cur2 = headB
-        count1 = count2 = 0
-        while cur1:
-            count1 += 1
+    if not headA or not headB:
+        return None
+    cur1 = headA
+    cur2 = headB
+    count1 = count2 = 0
+    while cur1:
+        count1 += 1
+        cur1 = cur1.next
+    while cur2:
+        count2 += 1
+        cur2 = cur2.next
+    cur1 = headA
+    cur2 = headB
+    if count1 > count2:
+        i = 0
+        while cur1 and i < count1 - count2:
             cur1 = cur1.next
-        while cur2:
-            count2 += 1
+            i += 1
+    else:
+        i = 0
+        while cur2 and i < count2 - count1:
             cur2 = cur2.next
-        cur1 = headA
-        cur2 = headB
-        if count1 > count2:
-            i = 0
-            while cur1 and i < count1 - count2:
-                cur1 = cur1.next
-                i += 1
-        else:
-            i = 0
-            while cur2 and i < count2 - count1:
-                cur2 = cur2.next
-                i += 1
-        while cur1 and cur2  and cur1 != cur2:
-            cur1 = cur1.next
-            cur2 = cur2.next
-        return cur1
+            i += 1
+    while cur1 and cur2  and cur1 != cur2:
+        cur1 = cur1.next
+        cur2 = cur2.next
+    return cur1
 
 #fourth solution
 def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
