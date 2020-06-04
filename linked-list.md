@@ -39,30 +39,30 @@ https://leetcode.com/problems/intersection-of-two-linked-lists/
 ```python
 #first solution
 def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-        i = ListNode()
-        i = copy.copy(headA)
-        len1 = 0
-        while i:
-            i = i.next
-            len1 += 1
-        i = ListNode()
-        i = copy.copy(headB)
-        len2 = 0
-        while i != None:
-            i = i.next
-            len2 += 1
-        if len1 > len2:
-            while len1 != len2:
-                headA = headA.next
-                len1 -= 1;
-        else:
-            while len1 != len2:
-                headB = headB.next
-                len2 -= 1
-        while headA != headB:
+    i = ListNode()
+    i = copy.copy(headA)
+    len1 = 0
+    while i:
+        i = i.next
+        len1 += 1
+    i = ListNode()
+    i = copy.copy(headB)
+    len2 = 0
+    while i != None:
+        i = i.next
+        len2 += 1
+    if len1 > len2:
+        while len1 != len2:
             headA = headA.next
+            len1 -= 1;
+    else:
+        while len1 != len2:
             headB = headB.next
-        return headA
+            len2 -= 1
+    while headA != headB:
+        headA = headA.next
+        headB = headB.next
+    return headA
  
 
 #second solution
