@@ -225,10 +225,10 @@ def isValidBST(self, root):
     def valid(node, lower, upper):
         if not node:
             return True
-        if lower and node.val <= lower:
-            return False
-        if upper and node.val >= upper:
-            return False
+            if lower and node.val <= lower:
+                return False
+            if upper and node.val >= upper:
+                return False
         return valid(node.left, lower, node.val) and valid(node.right, node.val, upper)
     return valid(root, None, None)
 
