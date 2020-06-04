@@ -30,7 +30,8 @@ def isPalindrome(self, head):
             return False
         slow = slow.next
     return True
- #second solution
+
+#second solution
 def isPalindrome(self, head: ListNode) -> bool:
     reverse = None
     middle = bottom = head
