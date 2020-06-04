@@ -39,77 +39,33 @@ https://leetcode.com/problems/intersection-of-two-linked-lists/
 ```python
 #first solution
 def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-    A_nodes, B_nodes = [], set()
-    while headA:
-        A_nodes.append(headA)
-        headA = headA.next
-    while headB:
-        B_nodes.add(headB)
-        headB = headB.next
-    for node in A_nodes:
-        if node in B_nodes:
-            return node
-    return None
-#second solution
-def getIntersectionNode(self, headA, headB):
-    if not headA or not headB: return None
-    lenA, lenB = 0, 0 
-    currA, currB = headA, headB
-    while currA.next:
-        currA = currA.next
-        lenA += 1
-    while currB.next:
-        currB = currB.next
-        lenB += 1
-    if currA != currB: return None
-    diff = 0
-    if lenA > lenB:
-        tmp1 = headA
-        tmp2 = headB
-        diff = lenA - lenB
-    else:
-        tmp1 = headB
-        tmp2 = headA
-        diff = lenB - lenA
-    while diff > 0:
-        tmp1 = tmp1.next
-        diff -= 1
-    while tmp1 != tmp2:
-        tmp1 = tmp1.next
-        tmp2 = tmp2.next
-    return tmp1
-    
-#third solution
-def getIntersectionNode(self, headA, headB):
-    if not headA or not headB:
-        return None
-    cur1 = headA
-    cur2 = headB
-    count1 = count2 = 0
-    while cur1:
-        count1 += 1
-        cur1 = cur1.next
-    while cur2:
-        count2 += 1
-        cur2 = cur2.next
-    cur1 = headA
-    cur2 = headB
-    if count1 > count2:
-        i = 0
-        while cur1 and i < count1 - count2:
-            cur1 = cur1.next
-            i += 1
-    else:
-        i = 0
-        while cur2 and i < count2 - count1:
-            cur2 = cur2.next
-            i += 1
-    while cur1 and cur2  and cur1 != cur2:
-        cur1 = cur1.next
-        cur2 = cur2.next
-    return cur1
+        i = ListNode()
+        i = copy.copy(headA)
+        len1 = 0
+        while i:
+            i = i.next
+            len1 += 1
+        i = ListNode()
+        i = copy.copy(headB)
+        len2 = 0
+        while i != None:
+            i = i.next
+            len2 += 1
+        if len1 > len2:
+            while len1 != len2:
+                headA = headA.next
+                len1 -= 1;
+        else:
+            while len1 != len2:
+                headB = headB.next
+                len2 -= 1
+        while headA != headB:
+            headA = headA.next
+            headB = headB.next
+        return headA
+ 
 
-#fourth solution
+#second solution
 def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
     if not headA or not headB:
         return None
