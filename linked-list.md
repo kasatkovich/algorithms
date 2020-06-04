@@ -67,23 +67,17 @@ def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
 
 #second solution
 def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-    if not headA or not headB:
-        return None
-    currA, currB = headA, headB
-    is_secondA, is_secondB = 0, 0
-    while(currA != currB):
-        if is_secondA == 0 and not currA.next:
-            is_secondA = 1
-            currA = headB
+    curA, curB = headA, headB
+    while curA is not curB:
+        if curA:
+            curA = curA.next
         else:
-            currA = currA.next
-        if is_secondB == 0 and not currB.next:
-            is_secondB = 1
-            currB = headA
+            curA = headB
+        if curB:
+            curB = curB.next
         else:
-            currB = currB.next
-    return currA
-
+            curB = headA
+    return curA
 
 ```
 
