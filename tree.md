@@ -228,9 +228,7 @@ def isValidBST(self, root):
             return True
         if node.val <= lower or node.val >= upper:
             return False
-        if not valid(node.right, node.val, upper):
-            return False
-        if not valid(node.left, lower, node.val):
+        if not valid(node.right, node.val, upper) or not valid(node.left, lower, node.val):
             return False
         return True
     return valid(root)
