@@ -222,8 +222,6 @@ def sortList(self, head: ListNode) -> ListNode:
     middle.next = None
     left = self.sortList(head)
     return self.mergeTwoLists(left, right)
-
-
   
 ```
 
