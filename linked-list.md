@@ -48,14 +48,10 @@ def detectCycle(self, head):
         fast = fast.next
         slow = slow.next
         if slow == fast:
-            break
-    if not fast:
-        return None
-    slow = head
-    while slow != fast:
-        slow = slow.next
-        fast = fast.next
-    return slow
+            while slow != fast:
+                slow = slow.next
+                fast = fast.next
+        return slow
 
 ```
 
