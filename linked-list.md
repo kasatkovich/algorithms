@@ -246,6 +246,45 @@ class Solution:
 https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 ## Sort List
+
 https://leetcode.com/problems/sort-list/
 
+```python
+def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
+    merged_list = ListNode(0)
+    current_merged = merged_list
+    while l1 and l2:
+        if l1.val < l2.val:
+            current_merged.next = l1
+            l1 = l1.next
+        else:
+            current_merged.next = l2
+            l2 = l2.next
+        current_merged = current_merged.next
+    if not l1:
+        current_merged.next = l2
+    if not l2:
+        current_merged.next = l1
+    return merged_list.next
+
+
+def middleNode(self, head: ListNode) -> ListNode:
+    slowPoint = head
+    fastPoint = head
+    while fastPoint.next and fastPoint.next.next:
+        slowPoint = slowPoint.next
+        fastPoint = fastPoint.next.next
+    return slowPoint
+
+
+def sortList(self, head: ListNode) -> ListNode:
+    if not head or not head.next:
+        return head
+    middle = self.middleNode(head)
+    right = self.sortList(middle.next)
+    middle.next = None
+    left = self.sortList(head)
+    return self.mergeTwoLists(left, right)
+  
+```
 
