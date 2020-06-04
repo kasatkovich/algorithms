@@ -185,7 +185,9 @@ class Solution:
 https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 ## Sort List
+
 https://leetcode.com/problems/sort-list/
+
 ```python
 def mergeTwoLists(self, l1: ListNode, l2: ListNode) -> ListNode:
     merged_list = ListNode(0)
