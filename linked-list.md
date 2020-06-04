@@ -119,6 +119,34 @@ def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
 ## Linked List Cycle II
 https://leetcode.com/problems/linked-list-cycle-ii/
 
+```python
+#first solution
+def detectCycle(self, head: ListNode) -> ListNode:
+    nodes = set()
+    while head:
+        if head not in nodes:
+            nodes.add(head)
+        else:
+            return head
+        head = head.next
+    return None
+#second solution
+def detectCycle(self, head):
+    slow = fast = head
+    while fast:
+        fast = fast.next
+        if not fast:
+            return None
+        fast = fast.next
+        slow = slow.next
+        if slow == fast:
+            while slow != fast:
+                slow = slow.next
+                fast = fast.next
+        return slow
+
+```
+
 ## Linked List Cycle
 https://leetcode.com/problems/linked-list-cycle/
 
