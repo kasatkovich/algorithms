@@ -17,7 +17,9 @@
 https://leetcode.com/problems/binary-tree-inorder-traversal/
 
 ```python
+
 #first solution
+
 def inorderTraversal(self, root: TreeNode) -> List[int]:
     res = []
     stack = deque([])
@@ -30,7 +32,9 @@ def inorderTraversal(self, root: TreeNode) -> List[int]:
         root = top.right
     return res
     
+
 #second solution
+
 def inorderTraversal(self, root):
     def helper(nodeIn, res):
         if nodeIn:
@@ -51,7 +55,9 @@ def inorderTraversal(self, root):
 https://leetcode.com/problems/symmetric-tree/
  
  ```python
+ 
  #first solution
+ 
  def isSymmetric(self, root: TreeNode) -> bool:
     if not root:
         return True
@@ -75,7 +81,9 @@ https://leetcode.com/problems/symmetric-tree/
         level = nextlevel
     return True
 
+
 #second solution
+
 def isSymmetric(self, root: TreeNode) -> bool:
     if not root:
         return True
@@ -152,7 +160,9 @@ def hasPathSum(self, root: TreeNode, sum: int) -> bool:
 
 https://leetcode.com/problems/binary-tree-level-order-traversal/
 ```python
+
 #first solution
+
 def levelOrder(self, root: TreeNode) -> List[List[int]]:
     self._levels = []
     self.get_level(root, 0)
@@ -168,7 +178,9 @@ def get_level(self, root, depth):
     self.get_level(root.left, depth + 1)
     self.get_level(root.right, depth + 1)
 
+
 #second solution
+
 def levelOrder(self, root):
     index = 0
     ans, queue = [], [(root, index)]
@@ -215,7 +227,9 @@ def isSame(self, t, k):
 
 https://leetcode.com/problems/kth-smallest-element-in-a-bst/
 ```python
+
 #first solution
+
 def kthSmallest(self, root: TreeNode, k: int) -> int:
         def numNodes(ptr, k):
             if not ptr:
@@ -231,7 +245,10 @@ def kthSmallest(self, root: TreeNode, k: int) -> int:
             else:
                 return left + right + 1, False
         return numNodes(root, k)[0]
+
+
 #second solution
+
 def kthSmallest(self, curNode: TreeNode, k: int) -> int:
     stack = []
     while curNode or stack:
