@@ -1,7 +1,7 @@
 # intervals
-+[Insert interval](#insert-interval)
-+[Merge intervals](#merge-intervals)
-+[Non-overlapping Intervals](#non-overlapping-intervals)
++ [Insert interval](#insert-interval)
++ [Merge intervals](#merge-intervals)
++ [Non-overlapping Intervals](#non-overlapping-intervals)
 
 ## non-overlapping intervals
 
