@@ -1,16 +1,17 @@
 # linked list
-+[Reverse Linked List](#reverse-linked-list)
-+[Middle of the Linked List](#middle-of-the-linked-list)
-+[Palindrome Linked List](#palindrome-linked-list)
-+[Merge Two Sorted Lists](#merge-two-sorted-lists)
-+[Remove Nth Node From End of List](#remove-nth-node-from-end-of-list)
-+[Linked List Cycle II](#linked-list-cycle-ii)
-+[Linked List Cycle](#linked-list-cycle)
-+[Reorder List](#reorder-list)
-+[Intersection of Two Linked Lists](#intersection-of-two-linked-lists)
-+[Sort List](#sort-list)
++ [Reverse Linked List](#reverse-linked-list)
++ [Middle of the Linked List](#middle-of-the-linked-list)
++ [Palindrome Linked List](#palindrome-linked-list)
++ [Merge Two Sorted Lists](#merge-two-sorted-lists)
++ [Remove Nth Node From End of List](#remove-nth-node-from-end-of-list)
++ [Linked List Cycle II](#linked-list-cycle-ii)
++ [Linked List Cycle](#linked-list-cycle)
++ [Reorder List](#reorder-list)
++ [Intersection of Two Linked Lists](#intersection-of-two-linked-lists)
++ [Sort List](#sort-list)
 ## Reverse Linked List
 https://leetcode.com/problems/reverse-linked-list/
+
 ```python
 def reverseList(self, head: ListNode) -> ListNode:
     prev = None
@@ -39,8 +40,11 @@ def middleNode(self, head: ListNode) -> ListNode:
 
 ## Palindrome Linked List
 https://leetcode.com/problems/palindrome-linked-list/
+
 ```python
+
 #first solution
+
 def isPalindrome(self, head):
     slow = head
     fast = head
@@ -57,7 +61,9 @@ def isPalindrome(self, head):
         slow = slow.next
     return True
 
+
 #second solution
+
 def isPalindrome(self, head: ListNode) -> bool:
     reverse = None
     middle = bottom = head
@@ -120,7 +126,9 @@ def removeNthFromEnd(self, head: ListNode, n: int) -> ListNode:
 https://leetcode.com/problems/linked-list-cycle-ii/
 
 ```python
+
 #first solution
+
 def detectCycle(self, head: ListNode) -> ListNode:
     nodes = set()
     while head:
@@ -130,7 +138,10 @@ def detectCycle(self, head: ListNode) -> ListNode:
             return head
         head = head.next
     return None
+
+
 #second solution
+
 def detectCycle(self, head):
     slow = fast = head
     while fast:
@@ -151,7 +162,9 @@ def detectCycle(self, head):
 https://leetcode.com/problems/linked-list-cycle/
 
 ```python
+
 #first solution
+
 def hasCycle(self, head: ListNode) -> bool:
     seen = set()
     while head and id(head) not in seen:
@@ -159,7 +172,9 @@ def hasCycle(self, head: ListNode) -> bool:
         head = head.next
     return head and id(head) in seen
 
+
 #second solution
+
 def hasCycle(self, head):
     fast = slow = head
     while slow and fast and fast.next:
@@ -175,7 +190,9 @@ def hasCycle(self, head):
 https://leetcode.com/problems/reorder-list/
 
 ```python
+
 #first solution
+
 def reorderList(self, head: ListNode) -> None:
     if not head:
         return head
@@ -200,7 +217,9 @@ def reorderList(self, head: ListNode) -> None:
         end = end.parent
     return head
 
+
 #second solution
+
 def _splitList(head):
     fast = head
     slow = head
@@ -246,7 +265,9 @@ class Solution:
 https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 ```python
+
 #first solution
+
 def getSize(self, head: ListNode) -> int:
     cur = head
     size = 0
@@ -272,7 +293,9 @@ def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
         headB = headB.next
     return headA
 
+
 #second solution
+
 def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
     curA, curB = headA, headB
     while curA is not curB:
