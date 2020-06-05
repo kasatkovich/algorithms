@@ -1,7 +1,7 @@
 # Arrays
-+[Two Sum](#two-sum)
-+[3Sum](#3Sum)
-+[Subarray Sum Equals K](#subarray-sum-equals-k)
++ [Two Sum](#two-sum)
++ [3Sum](#3Sum)
++ [Subarray Sum Equals K](#subarray-sum-equals-k)
 
 ## Two Sum
 https://leetcode.com/problems/two-sum/
