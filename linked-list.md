@@ -38,31 +38,31 @@ https://leetcode.com/problems/intersection-of-two-linked-lists/
 
 ```python
 #first solution
+def getSize(self, head: ListNode) -> int:
+    cur = head
+    size = 0
+    while cur:
+        size += 1
+        cur = cur.next
+    return size
+
+
 def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
-    i = ListNode()
-    i = copy.copy(headA)
-    len1 = 0
-    while i:
-        i = i.next
-        len1 += 1
-    i = ListNode()
-    i = copy.copy(headB)
-    len2 = 0
-    while i != None:
-        i = i.next
-        len2 += 1
-    if len1 > len2:
-        while len1 != len2:
+    size_of_a, size_of_b = self.getSize(headA), self.getSize(headB)
+    diff = size_of_a - size_of_b
+    if diff > 0:
+        for i in range(diff):
             headA = headA.next
-            len1 -= 1;
-    else:
-        while len1 != len2:
+    elif diff < 0:
+        for i in range(abs(diff)):
             headB = headB.next
-            len2 -= 1
-    while headA != headB:
+    while headA and headB:
+        if headA is headB:
+            break
         headA = headA.next
         headB = headB.next
     return headA
+
  
 
 #second solution
