@@ -63,8 +63,6 @@ def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
         headB = headB.next
     return headA
 
- 
-
 #second solution
 def getIntersectionNode(self, headA: ListNode, headB: ListNode) -> ListNode:
     curA, curB = headA, headB
