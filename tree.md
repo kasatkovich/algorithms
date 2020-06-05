@@ -250,7 +250,19 @@ def kthSmallest(self, curNode: TreeNode, k: int) -> int:
 
 https://leetcode.com/problems/validate-binary-search-tree/
 
+```python
+def isValidBST(self, root):
+    def valid(node, lower=float('-inf'), upper=float('inf')):
+        if not node:
+            return True
+        if node.val <= lower or node.val >= upper:
+            return False
+        if not valid(node.right, node.val, upper) or not valid(node.left, lower, node.val):
+            return False
+        return True
+    return valid(root)
 
+```
 ## Binary Search Tree Iterator
 
 https://leetcode.com/problems/binary-search-tree-iterator/
